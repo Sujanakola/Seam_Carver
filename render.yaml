@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: seam-carver
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.7
+      - key: JAVA_VERSION
+        value: "17"
+    disk:
+      name: uploads
+      mountPath: /uploads
+      sizeGB: 1 
