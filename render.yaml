@@ -2,13 +2,23 @@ services:
   - type: web
     name: seam-carver
     env: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: |
+      # Install system dependencies
+      apt-get update && apt-get install -y default-jdk ncurses-bin
+      # Install Python dependencies
+      pip install -r requirements.txt
+      # Compile Java files
+      javac Picture.java SeamCarver.java
+      # Create necessary directories
+      mkdir -p uploads static/img
     startCommand: python app.py
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.7
-      - key: JAVA_VERSION
-        value: "17"
+      - key: JAVA_HOME
+        value: /usr/lib/jvm/default-java
+      - key: PATH
+        value: /usr/lib/jvm/default-java/bin:${PATH}
     disk:
       name: uploads
       mountPath: /uploads
