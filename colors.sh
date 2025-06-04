@@ -16,7 +16,3 @@ YELLOW=$(safe_tput setaf 3)
 BLUE=$(safe_tput setaf 4)
 BOLD=$(safe_tput bold)
 NC=$(safe_tput sgr0)  # No Color / Reset
-
-# Sample usage
-# echo "${GREEN}${BOLD}✓ Success!${NC}"
-# echo "${RED}${BOLD}✗ Error!${NC}"
