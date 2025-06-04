@@ -1,6 +1,50 @@
-# SeamCarver_java_project
-Name : Sujana Kola; Registration Number : 20MIS0171
-Seam-carving is a content-aware image resizing technique where the image is reduced in size by one pixel of height (or width) at a time. A vertical seam in an image is a path of pixels connected from the top to the bottom with one pixel in each row; a horizontal seam is a path of pixels connected from the left to the right with one pixel in each column. Below left is the original 505-by-287 pixel image; below right is the result after removing 150 vertical seams, resulting in a 30% narrower image. Unlike standard content-agnostic resizing techniques (such as cropping and scaling), seam carving preserves the most interest features (aspect ratio, set of objects present, etc.) of the image.
+# Seam Carver
 
-![image](https://user-images.githubusercontent.com/76068884/164673814-6b619999-4ae5-4457-9a75-f27576ab1c8c.png)
-![image](https://user-images.githubusercontent.com/76068884/164673834-fefe71e7-fac3-4c4c-bd77-988c16c17008.png)
+## Overview
+
+Seam Carver is an intelligent image resizing tool that uses the seam carving algorithm to resize images while preserving important content and minimizing distortion. Unlike traditional resizing methods that simply scale or crop images, seam carving removes or inserts seams—paths of least importance—allowing for content-aware resizing.
+
+## Features
+
+- **Content-aware image resizing**  
+- Preserves important regions of the image  
+- Supports both image reduction and enlargement  
+- Energy calculation based on pixel importance  
+- Removes vertical and horizontal seams  
+- Simple and efficient implementation  
+
+## How It Works
+
+The algorithm calculates an energy map of the image representing the importance of each pixel. It then identifies seams with the lowest energy (least important paths) and removes or adds them to resize the image intelligently without distorting key content.
+
+## Installation
+
+1. Clone this repository:  
+   ```bash
+   git clone https://github.com/yourusername/seam-carver.git
+
+2. Navigate to the project directory:
+   ```bash
+   cd seam-carver
+3. Install dependencies (if applicable, e.g., Python libraries):
+   ```bash
+   pip install -r requirements.txt
+
+## Run the seam carving process on an input image:
+   1. ```bash
+       python seam_carver.py --input path/to/image.jpg --output path/to/resized_image.jpg --width 800 --height 600
+
+## Parameters
+
+- `--input`:  
+  Path to the original image file.
+
+- `--output`:  
+  Path where the resized image will be saved.
+
+- `--width`:  
+  Desired width of the output image (in pixels).
+
+- `--height`:  
+  Desired height of the output image (in pixels).
+
