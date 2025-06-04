@@ -31,8 +31,8 @@ The algorithm calculates an energy map of the image representing the importance 
    pip install -r requirements.txt
 
 ## Run the seam carving process on an input image:
-   ```bash
-   python seam_carver.py --input path/to/image.jpg --output path/to/resized_image.jpg --width 800 --height 600
+   1. ```bash
+       python seam_carver.py --input path/to/image.jpg --output path/to/resized_image.jpg --width 800 --height 600
 
 ## Parameters
 
