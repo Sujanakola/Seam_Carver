@@ -1,7 +1,15 @@
 services:
   - type: web
     name: seam-carver
-    env: python
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    numInstances: 1
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: HOST
+        value: 0.0.0.0
     buildCommand: |
       # Install system dependencies
       sudo apt-get update && sudo apt-get install -y default-jdk ncurses-bin
